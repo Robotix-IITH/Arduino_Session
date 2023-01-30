@@ -1,0 +1,19 @@
+
+// the setup routine runs once when you press reset:
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  // read the input on analog pin 0:
+  int sensorValue = analogRead(A0);
+  // print out the value you read:
+  Serial.print("Sensor Output:")
+  Serial.println(sensorValue); // 10 bit sensor Value
+  float voltage = (sensorValue/1023.0)*5;  // Converting 10 bit value to voltage
+  Serial.print("Voltage Value:") 
+  Serial.println(voltage);
+  delay(1);        // delay in between reads for stability
+}
